@@ -12,6 +12,4 @@ public interface Session {
      List<Object> findAll (Class myClass);
      void close();
 
-     void clear();
-
 }

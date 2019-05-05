@@ -10,11 +10,11 @@ import java.sql.DriverManager;
 import java.util.List;
 
 public class SessionImple implements Session {
-    private static Session instance;
+
     private Logger log = Logger.getLogger(SessionImpl.class.getName());
     private Connection connection;
 
-    private SessionImple() {
+    public SessionImple() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             this.connection =  DriverManager.getConnection("jdbc:mysql://localhost/dsa?user=root&password=divisiondehonor8&useJDBCCompliantTimezoneShift=true?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
@@ -22,11 +22,6 @@ public class SessionImple implements Session {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static Session getInstance (){
-        if (instance==null) instance = new SessionImple();
-        return instance;
     }
 
     public void save(Object entity) {
@@ -61,10 +56,5 @@ public class SessionImple implements Session {
     }
 
     public void close() {
-
-    }
-
-    public void clear() {
-
     }
 }

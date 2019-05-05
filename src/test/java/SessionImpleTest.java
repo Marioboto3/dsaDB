@@ -1,23 +1,25 @@
 import DB.Session;
-import DB.SessionImple;
+import DB.User;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class SessionImpleTest {
-    private Session ss;
+    public Session ss;
 
     @Before
     public void setUp() throws Exception {
-        this.ss = SessionImple.getInstance();
     }
     @After
     public void tearDown(){
-        this.ss.clear();
     }
 
     @Test
-    public void queryUpdate (){
-
+    public void UpdateUserTest(){
+        User user = new User("Mario","1234", 1);
+        ss.update(user,1);
     }
+
+
 }
