@@ -2,14 +2,13 @@ package DB;
 
 public class User {
 
-    String username;
-    String password;
-    int id;
+    private String username;
+    private String password;
+    private int id;
 
-    public User(String username, String password, int id) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.id = id;
     }
 
     public User() {
